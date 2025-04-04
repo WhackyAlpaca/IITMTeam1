@@ -1,22 +1,15 @@
 steps:
-  # Build the Docker image
-  - name: 'gcr.io/cloud-builders/docker'
-    args: 
-      - 'build'
-      - '-t'
-      - 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier'
-      - '-f'
-      - 'workspace/Dockerfile'
-      - '.'
-    dir: 'IITMTeam1'
+# Build the Docker image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier', '-f', 'Dockerfile', '.']
 
-  # Push the Docker image to Container Registry
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier']
+# Push the Docker image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier']
 
 # Images to be pushed to Container Registry
 images:
-  - 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier'
+- 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier'
 
 # Add this to fix the error
 options:
