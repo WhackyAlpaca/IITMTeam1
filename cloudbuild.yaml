@@ -1,0 +1,22 @@
+steps:
+  # Install dependencies
+  - name: 'python:3.9'
+    entrypoint: pip
+    args: ['install', '-r', 'requirements.txt']
+
+  # Run tests (if you have any)
+  # - name: 'python:3.9'
+  #   entrypoint: python
+  #   args: ['-m', 'unittest', 'discover', 'tests']
+
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/your-image-name', '.']
+
+  # Push the Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/your-image-name']
+
+# Images to be pushed to Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/your-image-name'
