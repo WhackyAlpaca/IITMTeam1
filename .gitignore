@@ -1,0 +1,51 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Local development settings
+.env
+.env.local
+*.local.py
+
+# Logs
+logs/
+*.log
+
+# ML model caches
+.cache/
+models/
+*.pth
+*.pt
+*.bin
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Google Cloud specific
+*.json
+!app.json
+app.yaml
