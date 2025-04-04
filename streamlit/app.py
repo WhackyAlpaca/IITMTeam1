@@ -21,9 +21,10 @@ if st.button("Analyze Comments"):
         with st.spinner("Processing... This may take a few minutes depending on the number of comments."):
             try:
                 # Make API request to your FastAPI backend
+                # Change 'url' to 'video_url' to match your API's expected parameter
                 response = requests.post(
                     "https://hate-speech-classifier-656879117583.asia-south1.run.app/process",
-                    json={"url": youtube_url}
+                    json={"video_url": youtube_url}
                 )
                 
                 # Check if request was successful
