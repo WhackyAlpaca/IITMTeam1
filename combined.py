@@ -24,7 +24,7 @@ if os.path.exists('.env'):
 app = FastAPI(title="Multilingual Hate Speech Classifier API")
 
 # Replace with your actual Google Cloud project ID
-PROJECT_ID = "your-gcp-project-id"
+PROJECT_ID = "arcane-firefly-455806-a8"
 
 def get_secret(secret_id):
     if os.getenv(secret_id):  # Check environment first
