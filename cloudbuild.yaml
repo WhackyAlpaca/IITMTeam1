@@ -1,22 +1,16 @@
 steps:
-  # Install dependencies
-  - name: 'python:3.9'
-    entrypoint: pip
-    args: ['install', '-r', 'requirements.txt']
-
-  # Run tests (if you have any)
-  # - name: 'python:3.9'
-  #   entrypoint: python
-  #   args: ['-m', 'unittest', 'discover', 'tests']
-
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/your-image-name', '.']
+    args: ['build', '-t', 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier', '.']
 
   # Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/your-image-name']
+    args: ['push', 'gcr.io/arcane-firefly-455806-a8/hate-speech-classifier']
 
 # Images to be pushed to Container Registry
 images:
   - 'gcr.io/$PROJECT_ID/your-image-name'
+
+# Add this to fix the error
+options:
+  logging: CLOUD_LOGGING_ONLY
